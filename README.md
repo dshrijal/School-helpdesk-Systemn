@@ -42,6 +42,16 @@ This system improves communication within the school by providing a centralized 
 
 ```
 School-helpdesk-Systemn/
+│── portfolio/
+│   ├── assets/
+│   │   ├── css/
+│   │   ├── js/
+│   │   └── images/
+│   ├── components/
+│   ├── docs/
+│   ├── pages/
+│   └── projects/
+│
 │── admin/
 │   ├── dashboard.php
 │   ├── all_queries.php
@@ -181,4 +191,3 @@ Contributions are welcome! Feel free to fork this repository and submit a pull r
 This project is open-source and available under the MIT License.
 
 ---
-
