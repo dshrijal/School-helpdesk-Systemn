@@ -1,5 +1,6 @@
 <?php
 // login.php - Student/Admin Login Page (SHS-4)
+session_start();
 require_once 'config/db.php';
 
 if (isLoggedIn()) {
