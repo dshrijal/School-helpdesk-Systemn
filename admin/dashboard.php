@@ -1,5 +1,7 @@
 <?php
 // admin/dashboard.php - SHS-12
+session_start();
+
 require_once '../config/db.php';
 requireAdmin();
 

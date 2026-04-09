@@ -1,7 +1,12 @@
 <?php
-// admin/dashboard.php - SHS-12
+// student/dashboard.php
+session_start();
 require_once '../config/db.php';
-requireAdmin();
+
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'student') {
+    header("Location: ../login.php");
+    exit();
+}
 
 $total_q   = $conn->query("SELECT COUNT(*) as c FROM queries")->fetch_assoc()['c'];
 $open_q    = $conn->query("SELECT COUNT(*) as c FROM queries WHERE status='open'")->fetch_assoc()['c'];

@@ -3,7 +3,7 @@
 session_start();
 require_once 'config/db.php';
 
-if (isLoggedIn()) {
+if (isset($_SESSION['user_id'])) {
     header("Location: " . (isAdmin() ? 'admin/dashboard.php' : 'student/dashboard.php'));
     exit();
 }
