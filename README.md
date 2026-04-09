@@ -26,16 +26,6 @@ This project is currently under development and aims to streamline communication
 
 ---
 
-## 📂 Project Structure
-
-```
-project-root/
-│── src/
-│── controller/
-│── model/
-│── view/
-│── resources/
-```
 
 ---
 
