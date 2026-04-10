@@ -1,4 +1,4 @@
-# 🎓 School Helpdesk System (🚧 In Development)
+# 🎓 School Helpdesk System  (🚧 In Development).
 
 ## 📌 Overview
 
