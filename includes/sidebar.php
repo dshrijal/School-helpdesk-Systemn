@@ -10,7 +10,7 @@ $current = basename($_SERVER['PHP_SELF']);
     <div class="sidebar-logo">
         <div class="logo-icon">🏫</div>
         <div>
-            <h2>School Help</h2>
+            <h2>School Helpdesk</h2>
             <span>Helpdesk System</span>
         </div>
     </div>
