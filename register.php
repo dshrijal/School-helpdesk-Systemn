@@ -24,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Registration successful. <a href='login.html'>Login here</a>";
     } else {
         echo "Error: " . $conn->error;
+        
     }
 }
 ?>
