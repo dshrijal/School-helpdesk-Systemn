@@ -45,6 +45,7 @@ $max_count = $day_counts ? max($day_counts) : 0;
 // ── If a specific day is selected, fetch its queries ─────────────────────────
 $selected_day    = isset($_GET['day']) ? (int) $_GET['day'] : null;
 $selected_queries = [];
+
 if ($selected_day) {
     $sel_date = sprintf('%04d-%02d-%02d', $year, $month, $selected_day);
     $q_sql = "SELECT q.id, q.title, q.category, q.status, u.name AS student_name, q.created_at
