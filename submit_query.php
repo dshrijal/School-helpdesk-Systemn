@@ -14,16 +14,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $description = $_POST['description'];
     $category = $_POST['category'];
     
-    $sql = "INSERT INTO queries (user_id, title, description, category, status, created_at) VALUES (?, ?, ?, ?, 'open', NOW())";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("isss", $user_id, $title, $description, $category);
-    
+$sql = "INSERT INTO queries (student_id, title, description, category, status, created_at) 
+VALUES (?, ?, ?, ?, 'open', NOW())";
+
+$stmt = $conn->prepare($sql);
+
+$stmt->bind_param("isss", $user_id, $title, $description, $category);
     if ($stmt->execute()) {
-        echo "Query submitted successfully!";
-        header("Location: dashboard_student.php");
-    } else {
-        echo "Error: " . $conn->error;
-    }
+    $success = "Query submitted successfully!";
+} else {
+    $error = "Failed to submit query!";
+}
 }
 ?>
 <!DOCTYPE html>
@@ -47,6 +48,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <option value="administrative">Administrative</option>
             </select>
             <button type="submit">Submit Query</button>
+            
+            <?php if(isset($success)) : ?>
+    <div class="success-message">
+        <?php echo $success; ?>
+    </div>
+<?php endif; ?>
+
+<?php if(isset($error)) : ?>
+    <div class="error-message">
+        <?php echo $error; ?>
+    </div>
+<?php endif; ?>
         </form>
         <a href="dashboard_student.php">Back to Dashboard</a>
     </div>

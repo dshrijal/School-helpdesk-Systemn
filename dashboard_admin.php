@@ -36,17 +36,15 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] != 'admin') {
         
         <!-- Display logged-in admin email -->
         <p>Welcome, Admin <?php echo $_SESSION['user_email']; ?></p>
+
+<!-- Success message after login -->
+        <?php if(isset($_GET['success'])) : ?>
+    <div class="success-message">
+        <?php echo $_GET['success']; ?>
+    </div>
+<?php endif; ?>
         
-        <!-- Navigation menu -->
-        <nav>
-            <ul>
-                <!-- Link to view all queries -->
-                <li><a href="admin_queries.php">View All Queries</a></li>
-                
-                <!-- Logout link -->
-                <li><a href="logout.php">Logout</a></li>
-            </ul>
-        </nav>
+      <?php include 'includes/sidebar.php'; ?>
         
         <!-- Section to display recent queries -->
         <section>
@@ -57,5 +55,15 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] != 'admin') {
         </section>
         
     </div>
+    <!-- Auto hide success/error messages after 3 seconds -->
+<script>
+setTimeout(() => {
+    const messages = document.querySelectorAll('.success-message, .error-message');
+
+    messages.forEach(message => {
+        message.style.display = 'none';
+    });
+}, 3000);
+</script>
 </body>
 </html>

@@ -21,15 +21,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['user_role'] = $user['role'];
             
             if ($user['role'] == 'admin') {
-                header("Location: dashboard_admin.php");
+               header("Location: dashboard_admin.php?success=Login successful");
+exit();
             } else {
-                header("Location: dashboard_student.php");
+               header("Location: dashboard_student.php?success=Login successful");
+exit();
             }
         } else {
-            echo "Invalid password";
+           header("Location: login.html?error=Invalid password");
+exit();
         }
     } else {
-        echo "User not found";
+        header("Location: login.html?error=User not found");
+exit();
     }
 }
 ?>
