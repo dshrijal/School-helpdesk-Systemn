@@ -18,19 +18,33 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] != 'student') {
 <body>
     <div class="dashboard-container">
         <h1>Student Dashboard</h1>
+        <!-- Display welcome message -->
         <p>Welcome, <?php echo $_SESSION['user_email']; ?></p>
-        
-        <nav>
-            <ul>
-                <li><a href="submit_query.php">Submit Query</a></li>
-                <li><a href="logout.php">Logout</a></li>
-            </ul>
-        </nav>
+
+
+<!-- Success message after login -->
+<?php if(isset($_GET['success'])) : ?>
+    <div class="success-message">
+        <?php echo $_GET['success']; ?>
+    </div>
+<?php endif; ?>
+       
+<?php include 'includes/sidebar.php'; ?>
         
         <section>
             <h2>Your Queries</h2>
             <!-- Display student queries here -->
         </section>
     </div>
+    <!-- Auto hide success/error messages after 3 seconds -->
+<script>
+setTimeout(() => {
+    const messages = document.querySelectorAll('.success-message, .error-message');
+
+    messages.forEach(message => {
+        message.style.display = 'none';
+    });
+}, 3000);
+</script>
 </body>
 </html>
