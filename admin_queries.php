@@ -9,6 +9,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] != 'admin') {
 
 $sql = "SELECT q.id, q.title, q.description, q.category, q.status, u.name, q.created_at FROM queries q JOIN users u ON q.user_id = u.id ORDER BY q.created_at DESC";
 $result = $conn->query($sql);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
