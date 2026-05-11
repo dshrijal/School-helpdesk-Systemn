@@ -1,0 +1,13 @@
+# macOS junk
+.DS_Store
+__MACOSX/
+
+# Database credentials – never push this
+db.php
+
+# SQL dump (optional – remove this line if you WANT the schema on GitHub)
+*.sql
+
+# Editor/IDE folders
+.vscode/
+.idea/
